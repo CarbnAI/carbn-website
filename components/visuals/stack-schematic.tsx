@@ -14,18 +14,13 @@ export function StackSchematic({ className }: { className?: string }) {
   const count = ordered.length;
 
   return (
-    <figure
-      className={cn(
-        "border-[1.5px] border-graphite-500 bg-graphite-900",
-        className,
-      )}
-    >
+    <figure className={cn("flex h-full flex-col", className)}>
       <figcaption className="flex items-center justify-between border-b px-4 py-3">
         <span className="type-mono text-graphite-300">carbn / stack</span>
         <Tag>Illustrative</Tag>
       </figcaption>
 
-      <ol className="relative p-4 md:p-6">
+      <ol className="relative p-4 md:p-6 lg:p-8">
         {ordered.map((layer, i) => {
           const fromBottom = count - 1 - i;
           const isEngine = layer.id === "engine";
@@ -33,29 +28,36 @@ export function StackSchematic({ className }: { className?: string }) {
           const row = (
             <div
               className={cn(
-                "group flex items-center justify-between gap-4 border-[1.5px] px-4 py-3.5 transition-[border-color] duration-200 ease-carbn",
+                "group border-[1.5px] px-4 py-3.5 transition-[border-color] duration-200 ease-carbn",
                 isEngine
                   ? "border-volt bg-graphite-950"
                   : "border-graphite-500 hover:border-graphite-50",
                 isHardware && "border-dashed",
               )}
             >
-              <div className="flex min-w-0 items-center gap-4">
-                <span className="type-mono text-graphite-400">
-                  {String(fromBottom).padStart(2, "0")}
-                </span>
-                <span
-                  className={cn(
-                    "type-heading text-h5 truncate",
-                    isEngine ? "text-volt" : "text-graphite-50",
-                  )}
-                >
-                  {layer.name}
+              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+                <div className="flex items-center gap-4">
+                  <span className="type-mono text-graphite-400">
+                    {String(fromBottom).padStart(2, "0")}
+                  </span>
+                  <span
+                    className={cn(
+                      "type-heading text-h5 whitespace-nowrap",
+                      isEngine ? "text-volt" : "text-graphite-50",
+                    )}
+                  >
+                    {layer.name}
+                  </span>
+                </div>
+                <span className="type-label shrink-0 text-graphite-300">
+                  {layer.distribution}
                 </span>
               </div>
-              <span className="type-label shrink-0 text-graphite-300">
-                {layer.distribution}
-              </span>
+              {isEngine ? (
+                <p className="mt-3 text-body-sm text-graphite-300">
+                  {layer.role}
+                </p>
+              ) : null}
             </div>
           );
 
@@ -63,11 +65,12 @@ export function StackSchematic({ className }: { className?: string }) {
             <motion.li
               key={layer.id}
               initial={{ opacity: 0, transform: "translateY(10px)" }}
-              animate={{ opacity: 1, transform: "translateY(0px)" }}
+              whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{
-                duration: 0.5,
+                duration: 0.3,
                 ease: EASE,
-                delay: 0.25 + fromBottom * 0.08,
+                delay: 0.1 + fromBottom * 0.06,
               }}
             >
               {i > 0 ? (
@@ -88,7 +91,7 @@ export function StackSchematic({ className }: { className?: string }) {
         })}
       </ol>
 
-      <dl className="grid grid-cols-1 border-t sm:grid-cols-3">
+      <dl className="mt-auto grid grid-cols-1 border-t sm:grid-cols-3">
         {[
           ["Backend", "MAX, vLLM fallback"],
           ["Data path", "On your network"],

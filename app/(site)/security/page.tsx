@@ -247,9 +247,9 @@ export default function SecurityPage() {
         <Cells cols={3}>
           {needs.map((n, i) => (
             <Cell
-              key={n.title}
               n={i + 1}
               total={needs.length}
+              key={n.title}
               title={n.title}
               tone={toneFor(i, undefined, 0)}
             >

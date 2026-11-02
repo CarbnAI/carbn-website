@@ -175,9 +175,9 @@ function ExtraSection({ section }: { section: ProductSection }) {
         >
           {section.items.map((item, i) => (
             <Cell
-              key={item.title}
               n={i + 1}
               total={section.items.length}
+              key={item.title}
               title={item.title}
               tone={toneFor(i, section.highlight)}
             >
@@ -252,7 +252,7 @@ export function ProductPage({ slug }: { slug: ProductSlug }) {
           <>
             <Button asChild>
               <Link href="/contact">
-                Get in touch
+                Contact us
                 <ArrowRight aria-hidden />
               </Link>
             </Button>
@@ -312,9 +312,9 @@ export function ProductPage({ slug }: { slug: ProductSlug }) {
         <Cells cols={product.features.length % 4 === 0 ? 4 : 3}>
           {product.features.map((f, i) => (
             <Cell
-              key={f.title}
               n={i + 1}
               total={product.features.length}
+              key={f.title}
               title={f.title}
               tone={toneFor(i, product.featureHighlight)}
             >

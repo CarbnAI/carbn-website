@@ -48,10 +48,6 @@ export default async function PostPage({ params }: Props) {
     <>
       <article>
         <header className="relative overflow-hidden border-b">
-          <div
-            aria-hidden
-            className="grid-motif pointer-events-none absolute inset-0 opacity-60"
-          />
           <div className="shell relative pt-12 pb-14 md:pt-20 md:pb-20">
             <Link
               href="/blog"

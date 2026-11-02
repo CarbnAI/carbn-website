@@ -91,9 +91,9 @@ export default function ProductsPage() {
           <Cells cols={3}>
             {rules.map((r, i) => (
               <Cell
-                key={r.title}
                 n={i + 1}
                 total={rules.length}
+                key={r.title}
                 title={r.title}
                 tone={toneFor(i, undefined, 2)}
               >
@@ -224,9 +224,9 @@ export default function ProductsPage() {
         <Cells cols={4}>
           {freedoms.map((f, i) => (
             <Cell
-              key={f.title}
               n={i + 1}
               total={freedoms.length}
+              key={f.title}
               title={f.title}
               tone={toneFor(i)}
             >
@@ -246,7 +246,7 @@ export default function ProductsPage() {
             <p className="measure mt-5 text-body-lg text-graphite-300">
               SSO and teams, integrations, dashboards, a setup interface and
               model management for connected and air-gapped sites. Deployed
-              locally, but managed and cohesive rather than parts to wire
+              locally, but managed as one product rather than parts to wire
               together.
             </p>
           </div>

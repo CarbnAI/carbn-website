@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Minus } from "lucide-react";
+import { ArrowRight, Minus } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
@@ -67,13 +67,13 @@ export default function PlatformPage() {
     <>
       <PageHero
         eyebrow="CarbnPlatform · Paid · In design"
-        title="Every module. One supported product."
-        lede="CarbnPlatform combines CarbnEngine and the Carbn modules into one integrated, enterprise-ready system. It is deployed on your own servers like the open-source parts, but it arrives managed and cohesive rather than as pieces to connect by hand."
+        title="Every module, one supported product"
+        lede="CarbnPlatform combines CarbnEngine and the Carbn modules into one integrated system. It is deployed on your own servers like the open-source parts, but it arrives managed as one product rather than as pieces to connect by hand."
         actions={
           <>
             <Button asChild>
               <Link href="/contact">
-                Talk to us
+                Contact us
                 <ArrowRight aria-hidden />
               </Link>
             </Button>
@@ -93,9 +93,9 @@ export default function PlatformPage() {
         <Cells cols={3}>
           {features.map((f, i) => (
             <Cell
-              key={f.title}
               n={i + 1}
               total={features.length}
+              key={f.title}
               title={f.title}
               tone={toneFor(i, 3)}
             >
@@ -158,13 +158,7 @@ export default function PlatformPage() {
                       </span>
                     </td>
                     <td className="border-l-[3px] border-l-volt bg-graphite-900 px-6 py-5 align-top text-body text-graphite-50">
-                      <span className="flex gap-3">
-                        <Check
-                          className="mt-1 size-[18px] shrink-0 stroke-[1.5] text-volt"
-                          aria-hidden
-                        />
-                        {plat}
-                      </span>
+                      {plat}
                     </td>
                   </tr>
                 );

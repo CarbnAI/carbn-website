@@ -32,7 +32,7 @@ export function Field({
       </label>
       {children}
       {hint ? (
-        <p className="mt-2 text-[13px] text-graphite-300">{hint}</p>
+        <p className="mt-2 text-body-sm text-graphite-300">{hint}</p>
       ) : null}
     </div>
   );

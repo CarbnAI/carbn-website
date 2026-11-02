@@ -13,10 +13,6 @@ export default function NotFound() {
     <>
       <SiteHeader />
       <main id="main" className="relative overflow-hidden">
-        <div
-          aria-hidden
-          className="grid-motif pointer-events-none absolute inset-0 opacity-60"
-        />
         <div className="shell relative flex min-h-[70vh] flex-col justify-center py-24">
           <Status state="fault">Fault · 404</Status>
           <h1 className="type-display mt-8 max-w-[14ch] text-display-2 text-graphite-50">

@@ -86,7 +86,7 @@ export function SiteFooter() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="type-ui inline-flex min-h-10 items-center text-[15px] text-graphite-200 transition-colors duration-200 ease-carbn hover:text-graphite-50"
+                      className="inline-flex min-h-10 items-center text-body-sm text-graphite-200 transition-colors duration-200 ease-carbn hover:text-graphite-50"
                     >
                       {l.title}
                     </Link>

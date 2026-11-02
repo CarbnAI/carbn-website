@@ -26,13 +26,9 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div
-          aria-hidden
-          className="grid-motif pointer-events-none absolute inset-0 opacity-60"
-        />
-        <div className="shell relative grid gap-14 pt-14 pb-16 md:pt-24 md:pb-24 lg:grid-cols-12 lg:items-center lg:gap-8">
-          <div className="lg:col-span-7">
+      <section className="shell py-6 md:py-8">
+        <div className="grid border lg:grid-cols-12">
+          <div className="flex flex-col justify-center p-6 py-12 md:p-8 md:py-16 lg:col-span-7">
             <Eyebrow className="mb-8">In design · building in the open</Eyebrow>
             <h1 className="type-display text-display-1 text-graphite-50">
               <span className="lg:block">Your entire AI stack.</span>{" "}
@@ -54,20 +50,8 @@ export default function HomePage() {
                 <Link href="/products">Explore the stack</Link>
               </Button>
             </div>
-            <p className="mt-8 max-w-[52ch] text-body-sm text-graphite-400">
-              Everything here is in design and will be built in the open.{" "}
-              <a
-                href={site.github}
-                target="_blank"
-                rel="noreferrer"
-                className="link"
-              >
-                Follow along on GitHub
-              </a>
-              , or reach out to get involved early.
-            </p>
           </div>
-          <div className="lg:col-span-5">
+          <div className="min-w-0 border-t bg-graphite-900 lg:col-span-5 lg:border-t-0 lg:border-l">
             <StackSchematic />
           </div>
         </div>
@@ -80,7 +64,7 @@ export default function HomePage() {
             <>
               <Eyebrow className="mb-4">The problem</Eyebrow>
               <h2 className="type-heading text-h1 text-graphite-50">
-                Three options today. Each one leaves a gap.
+                Three options today, and each leaves a gap
               </h2>
               <p className="measure mt-5 text-body-lg text-graphite-300">
                 Many organisations need a real AI capability but cannot send
@@ -119,9 +103,9 @@ export default function HomePage() {
         <Cells cols={4}>
           {whyOnPrem.map((item, i) => (
             <Cell
-              key={item.title}
               n={i + 1}
               total={whyOnPrem.length}
+              key={item.title}
               title={item.title}
               tone={toneFor(i, 0)}
             >
@@ -217,7 +201,7 @@ export default function HomePage() {
       <Section id="modules">
         <SectionHeader
           eyebrow="Open-source modules"
-          title="Four modules. One engine underneath."
+          title="Four modules on one engine"
           intro="Each module lives in its own repository, is released when it is ready, and runs on CarbnEngine by default. CarbnBenchmarks comes first: it proves which models fit before anything else is deployed."
         />
         <RevealGroup className="grid border-t border-l md:grid-cols-2 lg:grid-cols-4">
@@ -295,9 +279,9 @@ export default function HomePage() {
         <Cells cols={4}>
           {audience.map((a, i) => (
             <Cell
-              key={a.title}
               n={i + 1}
               total={audience.length}
+              key={a.title}
               title={a.title}
               tone={toneFor(i, undefined, 0)}
               tag={i === 0 ? "Primary" : undefined}
@@ -312,7 +296,7 @@ export default function HomePage() {
       <Section>
         <SectionHeader
           eyebrow="Build sequence"
-          title="The engine first. Then the module that proves it."
+          title="The engine first, then the module that proves it"
           intro="Carbn is in design. The build order follows a fixed set of priorities, and each module ships when it is ready."
           aside={
             <Link

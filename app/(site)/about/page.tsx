@@ -103,7 +103,7 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow={`About · ${site.location}`}
-        title="Less work than you feared"
+        title="AI your organisation owns outright"
         lede="Carbn is a startup making on-prem AI practical for organisations whose data cannot leave the building. We are building the whole machine, so no team has to assemble AI from parts."
       />
 
@@ -186,9 +186,9 @@ export default function AboutPage() {
         <Cells cols={3}>
           {principles.map((p, i) => (
             <Cell
-              key={p.title}
               n={i + 1}
               total={principles.length}
+              key={p.title}
               title={p.title}
               tone={toneFor(i, 0, 5)}
             >
@@ -204,7 +204,7 @@ export default function AboutPage() {
             <>
               <Eyebrow className="mb-4">Priorities</Eyebrow>
               <h2 className="type-heading text-h1 text-graphite-50">
-                A fixed order. When two goals compete, the higher one wins.
+                When two goals compete, the higher one wins
               </h2>
               <p className="measure mt-5 text-body-lg text-graphite-300">
                 Every decision in Carbn is ranked against the same four
@@ -231,9 +231,9 @@ export default function AboutPage() {
         <Cells cols={3}>
           {values.map((v, i) => (
             <Cell
-              key={v.title}
               n={i + 1}
               total={values.length}
+              key={v.title}
               title={v.title}
               tone={toneFor(i, undefined, 1)}
             >
