@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# internal brand/strategy material and Windows download markers
+carbn-platform-proposal.pdf
+*:Zone.Identifier

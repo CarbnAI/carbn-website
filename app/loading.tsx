@@ -1,9 +1,17 @@
+import { CarbnLogo } from "@/components/brand/carbn-logo";
+
 export default function Loading() {
-  // Stack uses React Suspense, which will render this page while user data is being fetched.
-  // See: https://nextjs.org/docs/app/api-reference/file-conventions/loading
   return (
-    <span>
-      <span className="loader" />
-    </span>
+    <div
+      role="status"
+      className="flex min-h-[60vh] items-center justify-center"
+    >
+      <CarbnLogo
+        form="mark"
+        colorway="volt-on-dark"
+        className="loading-mark h-8 w-auto"
+        label="Loading"
+      />
+    </div>
   );
 }

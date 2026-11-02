@@ -1,0 +1,8 @@
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
+minimumReleaseAgeExclude:
+  - framer-motion@14.7.1
+  - motion-dom@14.7.1
+  - motion-utils@14.7.0
+  - motion@14.7.1
