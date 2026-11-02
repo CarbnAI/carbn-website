@@ -1,24 +1,17 @@
-import { ArrowRight, Check, Minus } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
 import { ModuleCard } from "@/components/product/module-card";
 import { Button } from "@/components/ui/button";
 import { Cell, Cells, toneFor } from "@/components/ui/cells";
-import { Eyebrow, Index } from "@/components/ui/eyebrow";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { StickySplit } from "@/components/ui/sticky-split";
 import { PinnedLayerExplorer } from "@/components/visuals/layer-explorer";
 import { RouterDiagram } from "@/components/visuals/router-diagram";
 import { StackSchematic } from "@/components/visuals/stack-schematic";
-import {
-  audience,
-  buildSequence,
-  options,
-  positioning,
-  scope,
-  whyOnPrem,
-} from "@/lib/content/company";
+import { options, positioning, whyOnPrem } from "@/lib/content/company";
 import { engineProduct, modules } from "@/lib/content/products";
 import { site } from "@/lib/site";
 
@@ -212,138 +205,6 @@ export default function HomePage() {
               n={i + 1}
               total={modules.length}
             />
-          ))}
-        </RevealGroup>
-      </Section>
-
-      {/* Scope */}
-      <Section>
-        <SectionHeader
-          eyebrow="Clear about limits"
-          title="What Carbn does, and what it does not"
-          intro="Carbn runs inference. It does not train models. Knowing the boundary lets you plan around it."
-        />
-        <Reveal>
-          <table className="w-full border-collapse text-left">
-            <thead>
-              <tr className="border-y">
-                <th
-                  scope="col"
-                  className="type-label w-1/2 py-4 pr-6 text-graphite-400"
-                >
-                  Carbn does
-                </th>
-                <th
-                  scope="col"
-                  className="type-label w-1/2 border-l py-4 pl-6 text-graphite-400"
-                >
-                  Carbn does not
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {scope.map((row) => (
-                <tr key={row.does} className="border-b">
-                  <td className="py-5 pr-6 align-top">
-                    <span className="flex gap-3 text-body text-graphite-50">
-                      <Check
-                        className="mt-1 size-[18px] shrink-0 stroke-[1.5] text-volt"
-                        aria-hidden
-                      />
-                      {row.does}
-                    </span>
-                  </td>
-                  <td className="border-l py-5 pl-6 align-top">
-                    <span className="flex gap-3 text-body text-graphite-300">
-                      <Minus
-                        className="mt-1 size-[18px] shrink-0 stroke-[1.5] text-graphite-400"
-                        aria-hidden
-                      />
-                      {row.doesNot}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </Reveal>
-      </Section>
-
-      {/* Audience */}
-      <Section>
-        <SectionHeader
-          eyebrow="Who Carbn is for"
-          title="Built for the people who will run it"
-          intro="For platform and infrastructure engineering leads at organisations whose data cannot leave the building, and the people they answer to."
-        />
-        <Cells cols={4}>
-          {audience.map((a, i) => (
-            <Cell
-              n={i + 1}
-              total={audience.length}
-              key={a.title}
-              title={a.title}
-              tone={toneFor(i, undefined, 0)}
-              tag={i === 0 ? "Primary" : undefined}
-            >
-              {a.body}
-            </Cell>
-          ))}
-        </Cells>
-      </Section>
-
-      {/* Build sequence */}
-      <Section>
-        <SectionHeader
-          eyebrow="Build sequence"
-          title="The engine first, then the module that proves it"
-          intro="Carbn is in design. The build order follows a fixed set of priorities, and each module ships when it is ready."
-          aside={
-            <Link
-              href="/about#roadmap"
-              className="link inline-flex items-center gap-2"
-            >
-              Read the full sequence
-              <ArrowRight className="size-[18px] stroke-[1.5]" aria-hidden />
-            </Link>
-          }
-        />
-        <RevealGroup className="grid border-t border-l sm:grid-cols-2 lg:grid-cols-4">
-          {buildSequence.map((s, i) => (
-            <RevealItem
-              key={s.title}
-              className={
-                i === 0
-                  ? "flex min-h-[132px] flex-col justify-between border-r border-b bg-volt p-5 text-graphite-950"
-                  : "flex min-h-[132px] flex-col justify-between border-r border-b p-5"
-              }
-            >
-              <div className="flex items-center justify-between">
-                <Index
-                  n={i + 1}
-                  total={buildSequence.length}
-                  className={i === 0 ? "text-graphite-950" : undefined}
-                />
-                <span
-                  className={
-                    i === 0
-                      ? "type-label text-graphite-950"
-                      : "type-label text-graphite-400"
-                  }
-                >
-                  {i === 0 ? "First" : "Planned"}
-                </span>
-              </div>
-              <p
-                className={
-                  i === 0
-                    ? "type-heading mt-6 text-h4"
-                    : "type-heading mt-6 text-h4 text-graphite-50"
-                }
-              >
-                {s.title}
-              </p>
-            </RevealItem>
           ))}
         </RevealGroup>
       </Section>

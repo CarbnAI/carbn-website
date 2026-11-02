@@ -106,25 +106,6 @@ export const scope: { does: string; doesNot: string }[] = [
   },
 ];
 
-export const audience: Item[] = [
-  {
-    title: "Platform engineering leads",
-    body: "Proof it was built by people like them, and that they won't be the only person who can run it.",
-  },
-  {
-    title: "CISOs and security teams",
-    body: "Evidence of rigour: isolation, audit and a clear update path.",
-  },
-  {
-    title: "CIOs and CTOs",
-    body: "Confidence that Carbn is a durable, defensible choice.",
-  },
-  {
-    title: "The open-source community",
-    body: "A real project, not a sales funnel.",
-  },
-];
-
 export const principles: Item[] = [
   {
     title: "Data stays on your network",

@@ -9,7 +9,6 @@ import { Cell, Cells, toneFor } from "@/components/ui/cells";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Reveal, RevealGroup } from "@/components/ui/reveal";
 import { Section, SectionHeader } from "@/components/ui/section";
-import { LayerExplorer } from "@/components/visuals/layer-explorer";
 import { RouterDiagram } from "@/components/visuals/router-diagram";
 import { StackSchematic } from "@/components/visuals/stack-schematic";
 import { engineProduct, modules } from "@/lib/content/products";
@@ -84,24 +83,19 @@ export default function ProductsPage() {
           title="One engine, interchangeable modules, one platform"
           intro="Carbn is decentralised by design. The engine, each module and the platform are separate codebases, developed and released on their own. What holds them together is the CarbnEngine inference API."
         />
-        <Reveal>
-          <LayerExplorer />
-        </Reveal>
-        <div className="mt-12 md:mt-16">
-          <Cells cols={3}>
-            {rules.map((r, i) => (
-              <Cell
-                n={i + 1}
-                total={rules.length}
-                key={r.title}
-                title={r.title}
-                tone={toneFor(i, undefined, 2)}
-              >
-                {r.body}
-              </Cell>
-            ))}
-          </Cells>
-        </div>
+        <Cells cols={3}>
+          {rules.map((r, i) => (
+            <Cell
+              n={i + 1}
+              total={rules.length}
+              key={r.title}
+              title={r.title}
+              tone={toneFor(i, undefined, 2)}
+            >
+              {r.body}
+            </Cell>
+          ))}
+        </Cells>
       </Section>
 
       <Section>

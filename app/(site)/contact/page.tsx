@@ -1,4 +1,4 @@
-import { Check, Clock, Mail, MapPin } from "lucide-react";
+import { Clock, Mail, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/page-hero";
@@ -71,26 +71,6 @@ export default function ContactPage() {
                 </div>
               ))}
             </dl>
-
-            <div className="mt-12 border-[1.5px] border-graphite-500 bg-graphite-900 p-6">
-              <Eyebrow className="mb-4">Why Carbn</Eyebrow>
-              <ul className="space-y-3">
-                {[
-                  "On-prem AI with full data privacy",
-                  "Open-source engine and modules, by design",
-                  "Runs on the hardware you already own",
-                  "Connected and air-gapped deployments",
-                ].map((t) => (
-                  <li key={t} className="flex gap-3 text-body text-graphite-50">
-                    <Check
-                      className="mt-1 size-[18px] shrink-0 stroke-[1.5] text-volt"
-                      aria-hidden
-                    />
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
           </Reveal>
         </div>
       </Section>

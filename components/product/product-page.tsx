@@ -1,5 +1,5 @@
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
@@ -272,33 +272,18 @@ export function ProductPage({ slug }: { slug: ProductSlug }) {
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-          <Reveal className="lg:col-span-7">
+          <Reveal className="lg:col-span-5">
             <Eyebrow className="mb-4">Overview</Eyebrow>
             <h2 className="type-heading text-h1 text-graphite-50">
               What is {product.name}?
             </h2>
-            <div className="measure mt-6 space-y-5 text-body-lg text-graphite-300">
+          </Reveal>
+          <Reveal className="lg:col-span-6 lg:col-start-7" delay={0.1}>
+            <div className="measure space-y-5 text-body-lg text-graphite-300">
               {product.what.map((p) => (
                 <p key={p}>{p}</p>
               ))}
             </div>
-          </Reveal>
-          <Reveal className="lg:col-span-4 lg:col-start-9" delay={0.1}>
-            <Eyebrow className="mb-4">At a glance</Eyebrow>
-            <ul className="border-t">
-              {product.highlights.map((h) => (
-                <li
-                  key={h}
-                  className="flex items-start gap-3 border-b py-4 text-body text-graphite-50"
-                >
-                  <Check
-                    className="mt-1 size-[18px] shrink-0 stroke-[1.5] text-volt"
-                    aria-hidden
-                  />
-                  {h}
-                </li>
-              ))}
-            </ul>
           </Reveal>
         </div>
       </Section>

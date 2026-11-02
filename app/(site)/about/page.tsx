@@ -27,33 +27,6 @@ export const metadata: Metadata = {
     "Carbn is a startup from Amman, Jordan, building a complete AI capability that runs on the hardware organisations already own.",
 };
 
-const values = [
-  {
-    title: "Innovation",
-    body: "We push the boundaries of what runs well on the hardware organisations already own.",
-  },
-  {
-    title: "Integrity",
-    body: "We hold ourselves to high standards of honesty and transparency, including about what Carbn does not do.",
-  },
-  {
-    title: "Excellence",
-    body: "We are dedicated to delivering superior quality in all our work.",
-  },
-  {
-    title: "Customer-centricity",
-    body: "We prioritise understanding and meeting the unique needs of the organisations we serve.",
-  },
-  {
-    title: "Responsiveness",
-    body: "We provide timely support and solutions to the needs and challenges our customers face.",
-  },
-  {
-    title: "Reliability",
-    body: "We build systems that perform consistently, so the team running them can depend on them.",
-  },
-];
-
 const founders = [
   {
     name: "Yousef Musabeh",
@@ -224,23 +197,6 @@ export default function AboutPage() {
           intro="The build order follows Carbn's priorities. After the engine, modules are independent: each is released when it is ready, and the order reflects priority, not one combined release. No stage ships by lowering the quality of an earlier one."
         />
         <BuildTimeline items={buildSequence} />
-      </Section>
-
-      <Section>
-        <SectionHeader eyebrow="Values" title="The values we hold" />
-        <Cells cols={3}>
-          {values.map((v, i) => (
-            <Cell
-              n={i + 1}
-              total={values.length}
-              key={v.title}
-              title={v.title}
-              tone={toneFor(i, undefined, 1)}
-            >
-              {v.body}
-            </Cell>
-          ))}
-        </Cells>
       </Section>
 
       <Section>

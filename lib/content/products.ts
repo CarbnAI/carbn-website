@@ -40,7 +40,6 @@ export type Product = {
   summary: string;
   lede: string;
   what: string[];
-  highlights: string[];
   featuresTitle: string;
   featuresIntro: string;
   features: Item[];
@@ -62,14 +61,6 @@ const engine: Product = {
     "CarbnEngine is the core project and the foundation everything else in Carbn depends on. It runs local, open models on the hardware your organisation already has, and it is the default engine behind every Carbn module and plugin.",
     "Hardware flexibility is the design goal: the same models should run efficiently across different server setups, whatever mix of accelerators, CPUs and memory you own. CarbnEngine uses Modular MAX and Mojo as its primary backend, and vLLM as a secondary backend for models or hardware that MAX does not yet support.",
     "Carbn's own code is open source. MAX, which CarbnEngine wraps as released, is source-available under the MAX licence.",
-  ],
-  highlights: [
-    "Hardware-flexible by design",
-    "Default engine for every module",
-    "Swappable for your own engine",
-    "MAX primary, vLLM fallback",
-    "Runs entirely on your servers",
-    "Open-source Carbn code",
   ],
   featuresTitle: "What CarbnEngine gives every module",
   featuresIntro: "One engine, one interface, whatever hardware is in the rack.",
@@ -172,14 +163,6 @@ const benchmarks: Product = {
     "CarbnBenchmarks measures how well open models perform on a given hardware setup, helping teams pick the right models for their servers before committing to a deployment.",
     "It answers the first question every organisation has: which models should we run on the hardware we own? It runs different models on different hardware at the same time, so results are comparable under the same conditions.",
     "The models a team validates in CarbnBenchmarks are the models it then serves through CarbnChat, CarbnWorkflows and Carbn Connect.",
-  ],
-  highlights: [
-    "Hardware benchmarking",
-    "Model-to-hardware fit",
-    "MAX and vLLM side by side",
-    "Runs on CarbnEngine",
-    "Runs on your servers",
-    "Reports you can share",
   ],
   featuresTitle: "Know how a model will perform before you deploy it",
   featuresIntro: "Evidence a platform lead can take to leadership.",
@@ -291,14 +274,6 @@ const chat: Product = {
     "Rendering and document generation are a primary focus of the whole product. A user moving from a hosted assistant to CarbnChat should find nothing missing and nothing rougher.",
     "CarbnChat is built on assistant-ui, an MIT-licensed React library for AI chat, so Carbn owns every component. All conversation history is stored on your servers, never in a hosted service.",
   ],
-  highlights: [
-    "Multi-turn conversations",
-    "Saved chat history",
-    "File and attachment uploads",
-    "Conversation branching",
-    "Tool calls with approval steps",
-    "Sources and citations",
-  ],
   featuresTitle: "The chat experience your team expects, kept on your servers",
   featuresIntro:
     "Everything a hosted assistant does, with nothing leaving the network.",
@@ -393,14 +368,6 @@ const workflows: Product = {
     "CarbnWorkflows is a visual workflow builder, in the spirit of n8n, that lets you chain models, tools and logic into automated flows. It runs entirely on your own servers, so workflows, and the data that passes through them, never leave your infrastructure.",
     "Built on CarbnEngine, it will be free to self-host on its own, or as part of the integrated CarbnPlatform.",
   ],
-  highlights: [
-    "Visual workflow builder",
-    "Chain models, tools and logic",
-    "Runs entirely on your servers",
-    "Runs on CarbnEngine",
-    "Data never leaves your network",
-    "Open source",
-  ],
   featuresTitle:
     "Automate multi-step AI work without leaving your infrastructure",
   featuresIntro:
@@ -488,14 +455,6 @@ const connect: Product = {
     "Carbn Connect gives an organisation AI teammates: bots that are given a job, work in real applications and come back with finished work.",
     "Its bots run on open models served by CarbnEngine inside your network. The teammates, the work they do and everything they see stay on infrastructure you own.",
     "How well a bot completes multi-step work depends on the agentic ability of the available open models. Model choice for Carbn Connect is validated in CarbnBenchmarks against real tasks, not only against speed.",
-  ],
-  highlights: [
-    "Bots with a defined job",
-    "Work in real applications",
-    "Parallel work and handoffs",
-    "Approval before action",
-    "Runs on CarbnEngine",
-    "Data stays on your network",
   ],
   featuresTitle: "Teammates you can read, teach and approve",
   featuresIntro: "Eight capabilities, all running on infrastructure you own.",
